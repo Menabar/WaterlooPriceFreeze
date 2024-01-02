@@ -1,0 +1,36 @@
+<html>
+<body>
+    <div class="popup" style="background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+        <h4>Sign up to connect!</h4>
+        <form action="#" method="post" id="signupForm">
+            <div style="margin-bottom: 15px;">
+                <label for="name" style="display: block; margin-bottom: 5px;">Name</label>
+                <input type="text" id="name" name="name" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 3px;" required>
+            </div>
+    
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="display: block; margin-bottom: 5px;">Email</label>
+                <input type="email" id="email" name="email" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 3px;" required>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="school" style="display: block; margin-bottom: 5px;">School</label>
+                <select onclick="loadSchools()" id="school" name="school" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 3px;" required>
+                    <option value="" disabled selected>Select your school</option>
+                    <option value="not-a-student">Not a student</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label>
+                    <input type="checkbox" name="consent" required>
+                    I agree to join the movement's email list.
+                </label>
+            </div>
+    
+            <button type="submit" style="background-color: #313d5a; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px;">Sign Up</button>
+            <button type="button" onclick="closePopup()" style="background-color: #ddd; color: #333; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; margin-left: 10px;">Close</button>
+        </form>
+    </div>
+</body>
+</html>

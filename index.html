@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Awesome Website</title>
+    <title>Ontario Post-Secondary Rent Freeze</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 
     <header>
+        <button class="sign-up-button" onclick="loadPopupForm()">Sign Up and Connect</button>
         <h1>Ontario Post-Secondary Rent Freeze</h1>
         <p>Stop paying more for the same.</p>
     </header>
 
+    <div id="popupContainer"></div>
+
     <nav id="menu">
         <ul>
             <li><a href="#about-us">About Us</a></li>
-            <li><a href="#our-mission">Our Mission</a></li>
             <li><a href="#whats-the-problem">What's The Problem?</a></li>
             <li><a href="#what-we-do">What We Do</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
@@ -29,10 +36,6 @@
     <section class="info-section" id="about-us">
         <h2>About Us</h2>
         <p>We are post-secondary students and tenants in the province of Ontario. People from the universities and colleges of Ontario are a part of this movement.</p>
-    </section>
-
-    <section class="info-section" id="our-mission">
-        <h2>Our Mission</h2>
         <p>Our mission is to stop predatory landlords from raising prices on students who need to move often for school. Our longterm goal is to affect policy change with the governments responsible for housing its citizens.</p>
     </section>
 
@@ -45,7 +48,7 @@
         <h2>What We Do</h2>
         <p>Tenants have rights that can protect you and others. This movement is meant to educate, organize, and take action to protect ourselves from predatory landlords.</p>
         <ul>
-            <li>We provide government resources that can help you understand what type of landlord-tenant relationship you have, how to read your lease contract, and what to look for to understand your rights.</li>
+            <li>We provide resources that can help you understand what type of landlord-tenant relationship you have, how to read your lease contract, and what to look for to understand your rights.</li>
             <li>We are working to organize as many students as possible to stop the rent increases, directly saving you money.</li>
             <li>We are taking action to affect policy change to improve the living standards of student tenants.</li>
         </ul>
@@ -60,15 +63,15 @@
 
     <section class="info-section" id="how-it-works">
         <h2>How It Works</h2>
-        <p>Most tenants are granted rights by the RTA (Residential Tenancies Act) which prevent a landlord from forcing you to leave when your rental period ends. By default, most people should become monthly tenants.</p>
+        <p>Most tenants are granted rights by the RTA (<a href="https://www.ontario.ca/laws/statute/06r17" target="_blank">Residential Tenancies Act</a>) which prevent a landlord from forcing you to leave when your rental period ends. By default, most people should become monthly tenants.</p>
         <p>For example, many lease contracts are for 12 months. When you’re not living there, such as during the summer or while working out of town, you likely sublet to another student who doesn’t have a lease elsewhere. When the lease ends, it’s very likely that you do not need to move out.</p>
-        <p>If you do not move out, there are strict limitations on how much the landlord can increase your rent. The simple solution to this problem is to not move out.</p>
+        <p>If you do not move out, there are strict limitations on how much the landlord can increase your rent. If you don't want your rent to increase drastically, the simple solution is to not move out.</p>
         <p>There are also rules about subletting. You are not allowed to sublet for a profit, but you are allowed to get up to 100% of your costs covered by whoever sublets your place.</p>
     </section>
 
     <section class="info-section" id="does-this-apply-to-me">
         <h2>Does This Apply To Me</h2>
-        <p>There are certain qualifiers that must be met. This list is meant for Ontario residents.</p>
+        <p>There are certain qualifiers that must be met for Ontario residents.</p>
         <ul>
             <li>You must be a tenant covered by the RTA.</li>
             <li>You must not have a live-in landlord. Live-in landlords are landlords (or their extended family) that share a kitchen or bathroom with the tenants. This living arrangement is exempt from the RTA and the landlord can evict you at will.</li>
@@ -91,11 +94,11 @@
         
         <h3>Tenants</h3>
         <ul>
-            <li>You can join us for free by joining our email list.</li>
-            <li>Read our checklist for a step-by-step guide on how to actively participate and keep your rent from going up.</li>
+            <li>You can <span class="span-link-like" onclick="loadPopupForm()">join our email list</span> for free.</li>
+            <li>Read our <a href="#checklist">checklist</a> for a step-by-step guide on how to actively participate and keep your rent from going up.</li>
             <li>If you want to find or become a sublet, we can help match you with someone participating in our movement.</li>
             <li>No one is allowed to profit, but tenants will pay lower prices for rent, and everybody wins.</li>
-            <li>We’re always interested in spreading the word to as many people as possible.</li>
+            <li>Tell your friends! We’re always interested in spreading the word to as many people as possible.</li>
             <li>If you have any ideas, questions, want to volunteer your time or expertise, or make a donation to keep our servers running, please feel free to reach out.</li>
             <li>We can always use help related to law, real estate, government, and journalism.</li>
         </ul>
@@ -118,22 +121,24 @@
         <ul class="checklist-style">
             <li>Join our email list. We want to keep everyone up to date on what’s going on residentially, as well as connect people to provide the most affordable housing possible.</li>
             <li>If you consent to agree to our mission statement, we will add your voice to ours so we can flex the power of our numbers. Everyone that supports this movement can help us convince politicians to do something about the increased cost of living.</li>
-            <li>Determine if you are covered by the Residential Tenancies Act (RTA). Most residential dwellings are covered by it, but certain exceptions apply. For instance, student housing, assisted care facilities, hotels, motels, Airbnbs, and units where you share a kitchen or bathroom with the landlord or the landlord’s immediate family are likely not covered by the RTA.</li>
+            <li>Determine if you are covered by the RTA (<a href="https://www.ontario.ca/laws/statute/06r17" target="_blank">Residential Tenancies Act</a>). Most residential dwellings are covered by it, but certain exceptions apply. For instance, student housing, assisted care facilities, hotels, motels, Airbnbs, and units where you share a kitchen or bathroom with the landlord or the landlord’s immediate family are likely not covered by the RTA.</li>
             <li>If you are covered by the RTA, check when the building was first occupied residentially. If any part of it was occupied before November 15th, 2018, your unit is rent controlled. According to the RTA section 6.1 (6), the burden of proof lies on the landlord, so it may be worth asking them. However, Waterloo is a fairly well established city, and most of the units available are likely rent controlled.</li>
             <li>If your unit is rent controlled, check your lease for section 4 of the Residential Tenancy Agreement (Standard Form of Lease). You can search for the key phrase “Term of Tenancy Agreement”. This section outlines your start and end dates.</li>
-            <li>Check your lease for an N11 form, otherwise titled “Agreement to End the Tenancy”. This is an optional form that your landlord may have asked you to sign that states you must leave the unit after your lease period is over. In other words, signing this form would normally forfeit your right to become a monthly tenant.</li>
+            <li>Check your lease for an <a href="https://tribunalsontario.ca/ltb/forms/" target="_blank">N11 form</a>, otherwise titled “Agreement to End the Tenancy”. This is an optional form that your landlord may have asked you to sign that states you must leave the unit after your lease period is over. In other words, signing this form would normally forfeit your right to become a monthly tenant.</li>
             <li>If you did not sign an N11 form, skip this step. If you did sign an N11 form, find out when. As a government provided form, it contains fine print that protects your rights as a tenant. <b>A landlord may not force you to sign an N11 form as a condition of signing the lease. If you were forced to sign it as a condition of signing the lease, they may not enforce it. If you signed it at the same time as signing your lease, it cannot be enforced.</b> When communicating with your landlord in the future, this will likely come up, and is incredibly useful to know beforehand.
                 <br><br>
-                Note: if you have not signed a lease yet and you see an N11 form, attempt to sign the lease <b>without signing the N11 form</b>. If the landlord does not accept it, or if the signing software forces you to sign the N11 form in order to submit your leasing agreement, make a note of it. Any form of documentation, whether that’s a screen recording or a screenshot, is much better than nothing if it comes to a dispute.</li>
+                Note: if you have not signed a lease yet and you see an N11 form, attempt to sign the lease <b>without signing the N11 form</b>. If the landlord does not accept it, or if the signing software forces you to sign the N11 form in order to submit your leasing agreement, make a note of it. Any form of documentation, whether it's a screen recording or a screenshot, is much better than nothing if it comes to a dispute.</li>
             <li>If you are moving away for one or multiple terms, you need to find a sublet to cover your rent. You can find one yourself, or talk to us to find someone who supports this movement. Your landlord is not allowed to deny you a sublet without a reasonable justification. For example, if they’ve previously evicted a potential subtenant, that’s a pretty reasonable excuse for not wanting to let them live in your unit. However, if they’re simply denying you a sublet for no reason, you have several options. You can stand your ground, assert your rights, or seek legal advice. Some student organizations provide pro bono legal advice specifically for residential disputes. If you’re unsure, we’re happy to provide direction to local sources.</li>
             <li>If you are done with your lease because you’ve graduated or dropped out, congratulations! You can either keep your lease and continue subletting if you’re a trooper, but it’s understandable you may want to wash your hands of it all and rid yourself of the liability. The alternative method to help would be a lease transfer. Although this isn’t a component of the standard lease agreement, additional terms sometimes offer a Lease Transfer. This may incur a fee which either you or the new tenant may pay, and it may require the landlord’s approval, but it would allow you to transfer the lease to another person entirely, thus maintaining the desired price freeze.</li>
         </ul>
     </section>
 
-    <button id="backToTopBtn" title="Go to top">Back to top</button>
+    <button id="backToTopButton" title="Go to top">Back to top</button>
 
     <script src="legend.js"></script>
     <script src="backToTop.js"></script>
+    <script src="signUp.js"></script>
+    <script src="smoothScroll.js"></script>
 
 </body>
 </html>
